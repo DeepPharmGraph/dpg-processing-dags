@@ -1,0 +1,27 @@
+[project]
+name = "dpg-processing-dags"
+version = "0.0.0.dev"
+dependencies = []
+requires-python = "==3.12.*"
+readme = "README.md"
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pre-commit>=3.6.1",
+    "ruff>=0.2.1",
+]
+
+[tool.pdm.scripts]
+post_install = { cmd = ["pre-commit", "install"] }
+
+[tool.ruff]
+select = ["E4", "E7", "E9", "F", "B", "I", "Q"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
